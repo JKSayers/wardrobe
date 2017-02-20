@@ -1,0 +1,54 @@
+﻿@model IEnumerable<wardrobe.Models.Outfit>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<!-- I wanted to stylize this page but I didn't get around to it. I'm going to improve it on my own time so it looks better when viewed in Git
+    I definitely want to migrate a Name field and fix the displaynamefor's to be accurate. Just ran out of time-->
+<h2>Outfits</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Accessory.AccessoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bottom.BottomsName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sho.ShoesName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Top.TopsName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Accessory.AccessoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bottom.BottomsName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sho.ShoesName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Top.TopsName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OutfitID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OutfitID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OutfitID })
+        </td>
+    </tr>
+}
+
+</table>

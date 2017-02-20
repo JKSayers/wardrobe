@@ -1,0 +1,64 @@
+﻿/*Altered body background img and font family*/
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: black;
+    color: lightgray;
+    background-image: url('bg1.jpg');
+    font-family:Oswald;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+/*Turns paragraph text white*/
+p {
+    color: white;
+}
+/*Customizing the main jumbotron on homepage*/
+.jumbotron {
+    background-color: rgba(200,200,200,.3);
+    color: white;
+    text-align: center;
+    background-image: url('jback.jpg');
+}
+
+/*sets thumbnail background color to white w/altered opacity*/
+.bgthumb {
+    background-color: rgba(248, 248, 248, 0.73);
+}
+
+/*sizes the image in the thumbnails*/
+.th-img {
+    height:150px;
+    width:150px;
+}
+/*Sets width and text color to black in the small wells*/
+.well-sm {
+    width:120px;
+    color:black;
+}
+/*Sets height/width and bottom margin/padding for the thumbnails*/
+.thumbnail {
+    height:200px;
+      width:200px;
+      padding-bottom:45px;
+      margin-bottom:80px;
+      
+}

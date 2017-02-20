@@ -1,0 +1,47 @@
+﻿@model IEnumerable<wardrobe.Models.Accessory>
+
+@{
+    ViewBag.Title = "Accessories";
+}
+<!--Container for page-->
+<div class="container">
+
+    <!--2nd tier of 3 tier breadcrumb menu-->
+    <ol class="breadcrumb">
+        <li><a href="/Home">My Wardrobe</a></li>
+        <li class="active">Accessories</li>
+    </ol>
+    <!--Header Label with Label-->
+    <h3>Accessories <span class="label label-default">Inventory</span></h3>
+
+    <!--Actionlink for creating new entries-->
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    <div class="row">
+        <!-- foreach loop to display each item-->
+        @foreach (var item in Model)
+        {
+
+        <!-- Column for Tops items-->
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <div class="thumbnail bgthumb">
+                    <img src="~/Content/hatico.png" class="img-responsive th-img" alt="Responsive image" />
+
+                    <div class="caption">
+
+                        <h3><p>@Html.DisplayFor(modelItem => item.AccessoryName)</p></h3>
+                        @Html.ActionLink("View now", "Details", new { id = item.AccessoryID }, new { @class = "btn btn-info", role = "button" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
+
+
+
+
+

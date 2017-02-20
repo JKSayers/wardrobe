@@ -1,0 +1,58 @@
+﻿@model wardrobe.Models.Accessory
+
+@{
+    ViewBag.Title = "Accessories";
+}
+<div class="container">
+
+    <!--Breadcrumb menu with 3 tiers-->
+    <ol class="breadcrumb">
+        <li><a href="/Home">My Wardrobe</a></li>
+        <li><a href="/Accessories">Accessories</a></li>
+        <li class="active">Item View</li>
+    </ol>
+    <!--Header with label-->
+    <h3>Accessories <span class="label label-default">Item View</span></h3>
+
+    <!--Row for item info-->
+    <div class="row">
+        <h4>Accessories</h4>
+        <hr />
+        <!--Column made responsive for various screen sizes-->
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <dl class="dl-horizontal">
+
+                <!-- Begin item info display-->
+                <!--Item name  well block-->
+                <dt class="well well-sm">
+                    @Html.DisplayNameFor(model => model.AccessoryName):
+                    @Html.DisplayFor(model => model.AccessoryName)
+                </dt>
+                <!--Item color well block-->
+                <dt class="well well-sm">
+                    @Html.DisplayNameFor(model => model.AccessoryColor):
+                    @Html.DisplayFor(model => model.AccessoryColor)
+                </dt>
+                <!-- Item occasion well block-->
+                <dt class="well well-sm">
+                    @Html.DisplayNameFor(model => model.AccessoryOccasion):
+                    @Html.DisplayFor(model => model.AccessoryOccasion)
+                </dt>
+                <!--item season well block-->
+                <dt class="well well-sm">
+                    @Html.DisplayNameFor(model => model.AccessorySeason):
+                    @Html.DisplayFor(model => model.AccessorySeason)
+                </dt>
+            </dl>
+        </div>
+        <!--column to display responsive item picture-->
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <img src="@Url.Content(Model.AccessoryPhoto)" class="img-responsive" alt="Responsive image" />
+
+
+        </div>
+    </div>
+    <!--buttons to edit or returen to the review index-->
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AccessoryID }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Back to List", "Index", new { id = Model.AccessoryID }, new { @class = "btn btn-info" })
+</div>

@@ -1,0 +1,59 @@
+﻿@model wardrobe.Models.Top
+
+@{
+    ViewBag.Title = "Tops";
+}
+
+<div class="container">
+
+    <!--Breadcrumb menu with 3 tiers-->
+    <ol class="breadcrumb">
+        <li><a href="/Home">My Wardrobe</a></li>
+        <li><a href="/Tops">Tops</a></li>
+        <li class="active">Item View</li>
+    </ol>
+    <!--Header with label-->
+    <h3>Tops <span class="label label-default">Item View</span></h3>
+
+    <!--Row for item info-->
+    <div class="row">
+        <h4>Tops</h4>
+        <hr />
+        <!--Column made responsive for various screen sizes-->
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <dl class="dl-horizontal">
+
+                <!-- Begin item info display-->
+                <!--Item name  well block-->
+                <dt class="well well-sm">
+                    @Html.DisplayNameFor(model => model.TopsName):
+                    @Html.DisplayFor(model => model.TopsName)
+                </dt>
+                <!--Item color well block-->
+                <dt class="well well-sm">
+                    @Html.DisplayNameFor(model => model.TopsColor):
+                    @Html.DisplayFor(model => model.TopsColor)
+                </dt>
+                <!-- Item occasion well block-->
+                <dt class="well well-sm">
+                    @Html.DisplayNameFor(model => model.TopsOccasion):
+                    @Html.DisplayFor(model => model.TopsOccasion)
+                </dt>
+                <!--item season well block-->
+                <dt class="well well-sm">
+                    @Html.DisplayNameFor(model => model.TopsSeason):
+                    @Html.DisplayFor(model => model.TopsSeason)
+                </dt>
+            </dl>
+        </div>
+        <!--column to display responsive item picture-->
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <img src="@Url.Content(Model.TopsPhoto)" class="img-responsive" alt="Responsive image" />
+
+
+        </div>
+    </div>
+    <!--buttons to edit or returen to the review index-->
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TopsID }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Back to List", "Index", new { id = Model.TopsID }, new { @class = "btn btn-info" })
+</div>
